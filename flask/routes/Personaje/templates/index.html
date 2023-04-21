@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Agregar personaje</title>
+</head>
+<body>
+    <h1>Listado de personajes</h1>
+    <div>
+        <a href="{{url_for('appPersonaje.agregar')}}">Agregar personaje</a>
+    </div>
+    <div>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for personaje in personajes %}
+                    <tr>
+                        <td>{{personaje.id}}</td>
+                        <td>{{personaje.nombre_personaje}}</td>
+                        <td><a href="editar/{{personaje.id}}">Editar</a></td>
+                        <td><a href="eliminar/{{personaje.id}}">Eliminar</a></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div>
+        <a href="{{url_for('appPersonaje.salir')}}">Salir</a>
+    </div>
+</body>
+</html>

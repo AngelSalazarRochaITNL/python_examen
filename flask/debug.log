@@ -1,0 +1,344 @@
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [21/Apr/2023 07:21:16] "[33mGET / HTTP/1.1[0m" 404 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+ERROR:app:Exception on / [GET]
+Traceback (most recent call last):
+  File "C:\Users\USUARIO LENOVO\Desktop\10° semestre\Programacion multiparadigma\examen_unidad2\flask\.venv\lib\site-packages\sqlalchemy\engine\base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\USUARIO LENOVO\Desktop\10° semestre\Programacion multiparadigma\examen_unidad2\flask\.venv\lib\site-packages\sqlalchemy\engine\default.py", line 748, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.UndefinedTable: no existe la relación «personaje»
+LINE 2: FROM personaje
+             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\USUARIO LENOVO\Desktop\10° semestre\Programacion multiparadigma\examen_unidad2\flask\.venv\lib\site-packages\flask\app.py", line 2528, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\USUARIO LENOVO\Desktop\10° semestre\Programacion multiparadigma\examen_unidad2\flask\.venv\lib\site-packages\flask\app.py", line 1825, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\USUARIO LENOVO\Desktop\10° semestre\Programacion multiparadigma\examen_unidad2\flask\.venv\lib\site-packages\flask\app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\USUARIO LENOVO\Desktop\10° semestre\Programacion multiparadigma\examen_unidad2\flask\.venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\USUARIO LENOVO\Desktop\10° semestre\Programacion multiparadigma\examen_unidad2\flask\routes\Personaje\personaje.py", line 13, in inicio
+    personajes = Personaje.query.all()
+  File "C:\Users\USUARIO LENOVO\Desktop\10° semestre\Programacion multiparadigma\examen_unidad2\flask\.venv\lib\site-packages\sqlalchemy\orm\query.py", line 2697, in all
+    return self._iter().all()  # type: ignore
+  File "C:\Users\USUARIO LENOVO\Desktop\10° semestre\Programacion multiparadigma\examen_unidad2\flask\.venv\lib\site-packages\sqlalchemy\orm\query.py", line 2855, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+  File "C:\Users\USUARIO LENOVO\Desktop\10° semestre\Programacion multiparadigma\examen_unidad2\flask\.venv\lib\site-packages\sqlalchemy\orm\session.py", line 2229, in execute
+    return self._execute_internal(
+  File "C:\Users\USUARIO LENOVO\Desktop\10° semestre\Programacion multiparadigma\examen_unidad2\flask\.venv\lib\site-packages\sqlalchemy\orm\session.py", line 2124, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+  File "C:\Users\USUARIO LENOVO\Desktop\10° semestre\Programacion multiparadigma\examen_unidad2\flask\.venv\lib\site-packages\sqlalchemy\orm\context.py", line 253, in orm_execute_statement
+    result = conn.execute(
+  File "C:\Users\USUARIO LENOVO\Desktop\10° semestre\Programacion multiparadigma\examen_unidad2\flask\.venv\lib\site-packages\sqlalchemy\engine\base.py", line 1414, in execute
+    return meth(
+  File "C:\Users\USUARIO LENOVO\Desktop\10° semestre\Programacion multiparadigma\examen_unidad2\flask\.venv\lib\site-packages\sqlalchemy\sql\elements.py", line 486, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "C:\Users\USUARIO LENOVO\Desktop\10° semestre\Programacion multiparadigma\examen_unidad2\flask\.venv\lib\site-packages\sqlalchemy\engine\base.py", line 1638, in _execute_clauseelement
+    ret = self._execute_context(
+  File "C:\Users\USUARIO LENOVO\Desktop\10° semestre\Programacion multiparadigma\examen_unidad2\flask\.venv\lib\site-packages\sqlalchemy\engine\base.py", line 1842, in _execute_context
+    return self._exec_single_context(
+  File "C:\Users\USUARIO LENOVO\Desktop\10° semestre\Programacion multiparadigma\examen_unidad2\flask\.venv\lib\site-packages\sqlalchemy\engine\base.py", line 1983, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\USUARIO LENOVO\Desktop\10° semestre\Programacion multiparadigma\examen_unidad2\flask\.venv\lib\site-packages\sqlalchemy\engine\base.py", line 2326, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\USUARIO LENOVO\Desktop\10° semestre\Programacion multiparadigma\examen_unidad2\flask\.venv\lib\site-packages\sqlalchemy\engine\base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\USUARIO LENOVO\Desktop\10° semestre\Programacion multiparadigma\examen_unidad2\flask\.venv\lib\site-packages\sqlalchemy\engine\default.py", line 748, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedTable) no existe la relación «personaje»
+LINE 2: FROM personaje
+             ^
+
+[SQL: SELECT personaje.id AS personaje_id, personaje.nombre_personaje AS personaje_nombre_personaje 
+FROM personaje]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+INFO:werkzeug:127.0.0.1 - - [21/Apr/2023 07:29:28] "[35m[1mGET / HTTP/1.1[0m" 500 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+ERROR:app:Exception on / [GET]
+Traceback (most recent call last):
+  File "C:\Users\USUARIO LENOVO\Desktop\10° semestre\Programacion multiparadigma\examen_unidad2\flask\.venv\lib\site-packages\sqlalchemy\engine\base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\USUARIO LENOVO\Desktop\10° semestre\Programacion multiparadigma\examen_unidad2\flask\.venv\lib\site-packages\sqlalchemy\engine\default.py", line 748, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.UndefinedTable: no existe la relación «personaje»
+LINE 2: FROM personaje
+             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\USUARIO LENOVO\Desktop\10° semestre\Programacion multiparadigma\examen_unidad2\flask\.venv\lib\site-packages\flask\app.py", line 2528, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\USUARIO LENOVO\Desktop\10° semestre\Programacion multiparadigma\examen_unidad2\flask\.venv\lib\site-packages\flask\app.py", line 1825, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\USUARIO LENOVO\Desktop\10° semestre\Programacion multiparadigma\examen_unidad2\flask\.venv\lib\site-packages\flask\app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\USUARIO LENOVO\Desktop\10° semestre\Programacion multiparadigma\examen_unidad2\flask\.venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\USUARIO LENOVO\Desktop\10° semestre\Programacion multiparadigma\examen_unidad2\flask\routes\Personaje\personaje.py", line 12, in inicio
+    personajes = Personaje.query.all()
+  File "C:\Users\USUARIO LENOVO\Desktop\10° semestre\Programacion multiparadigma\examen_unidad2\flask\.venv\lib\site-packages\sqlalchemy\orm\query.py", line 2697, in all
+    return self._iter().all()  # type: ignore
+  File "C:\Users\USUARIO LENOVO\Desktop\10° semestre\Programacion multiparadigma\examen_unidad2\flask\.venv\lib\site-packages\sqlalchemy\orm\query.py", line 2855, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+  File "C:\Users\USUARIO LENOVO\Desktop\10° semestre\Programacion multiparadigma\examen_unidad2\flask\.venv\lib\site-packages\sqlalchemy\orm\session.py", line 2229, in execute
+    return self._execute_internal(
+  File "C:\Users\USUARIO LENOVO\Desktop\10° semestre\Programacion multiparadigma\examen_unidad2\flask\.venv\lib\site-packages\sqlalchemy\orm\session.py", line 2124, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+  File "C:\Users\USUARIO LENOVO\Desktop\10° semestre\Programacion multiparadigma\examen_unidad2\flask\.venv\lib\site-packages\sqlalchemy\orm\context.py", line 253, in orm_execute_statement
+    result = conn.execute(
+  File "C:\Users\USUARIO LENOVO\Desktop\10° semestre\Programacion multiparadigma\examen_unidad2\flask\.venv\lib\site-packages\sqlalchemy\engine\base.py", line 1414, in execute
+    return meth(
+  File "C:\Users\USUARIO LENOVO\Desktop\10° semestre\Programacion multiparadigma\examen_unidad2\flask\.venv\lib\site-packages\sqlalchemy\sql\elements.py", line 486, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "C:\Users\USUARIO LENOVO\Desktop\10° semestre\Programacion multiparadigma\examen_unidad2\flask\.venv\lib\site-packages\sqlalchemy\engine\base.py", line 1638, in _execute_clauseelement
+    ret = self._execute_context(
+  File "C:\Users\USUARIO LENOVO\Desktop\10° semestre\Programacion multiparadigma\examen_unidad2\flask\.venv\lib\site-packages\sqlalchemy\engine\base.py", line 1842, in _execute_context
+    return self._exec_single_context(
+  File "C:\Users\USUARIO LENOVO\Desktop\10° semestre\Programacion multiparadigma\examen_unidad2\flask\.venv\lib\site-packages\sqlalchemy\engine\base.py", line 1983, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\USUARIO LENOVO\Desktop\10° semestre\Programacion multiparadigma\examen_unidad2\flask\.venv\lib\site-packages\sqlalchemy\engine\base.py", line 2326, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\USUARIO LENOVO\Desktop\10° semestre\Programacion multiparadigma\examen_unidad2\flask\.venv\lib\site-packages\sqlalchemy\engine\base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\USUARIO LENOVO\Desktop\10° semestre\Programacion multiparadigma\examen_unidad2\flask\.venv\lib\site-packages\sqlalchemy\engine\default.py", line 748, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedTable) no existe la relación «personaje»
+LINE 2: FROM personaje
+             ^
+
+[SQL: SELECT personaje.id AS personaje_id, personaje.nombre_personaje AS personaje_nombre_personaje 
+FROM personaje]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+INFO:werkzeug:127.0.0.1 - - [21/Apr/2023 07:32:25] "[35m[1mGET / HTTP/1.1[0m" 500 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+ERROR:app:Exception on / [GET]
+Traceback (most recent call last):
+  File "C:\Users\USUARIO LENOVO\Desktop\10° semestre\Programacion multiparadigma\examen_unidad2\flask\.venv\lib\site-packages\sqlalchemy\engine\base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\USUARIO LENOVO\Desktop\10° semestre\Programacion multiparadigma\examen_unidad2\flask\.venv\lib\site-packages\sqlalchemy\engine\default.py", line 748, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.UndefinedTable: no existe la relación «personaje»
+LINE 2: FROM personaje
+             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\USUARIO LENOVO\Desktop\10° semestre\Programacion multiparadigma\examen_unidad2\flask\.venv\lib\site-packages\flask\app.py", line 2528, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\USUARIO LENOVO\Desktop\10° semestre\Programacion multiparadigma\examen_unidad2\flask\.venv\lib\site-packages\flask\app.py", line 1825, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\USUARIO LENOVO\Desktop\10° semestre\Programacion multiparadigma\examen_unidad2\flask\.venv\lib\site-packages\flask\app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\USUARIO LENOVO\Desktop\10° semestre\Programacion multiparadigma\examen_unidad2\flask\.venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\USUARIO LENOVO\Desktop\10° semestre\Programacion multiparadigma\examen_unidad2\flask\routes\Personaje\personaje.py", line 12, in inicio
+    personajes = Personaje.query.all()
+  File "C:\Users\USUARIO LENOVO\Desktop\10° semestre\Programacion multiparadigma\examen_unidad2\flask\.venv\lib\site-packages\sqlalchemy\orm\query.py", line 2697, in all
+    return self._iter().all()  # type: ignore
+  File "C:\Users\USUARIO LENOVO\Desktop\10° semestre\Programacion multiparadigma\examen_unidad2\flask\.venv\lib\site-packages\sqlalchemy\orm\query.py", line 2855, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+  File "C:\Users\USUARIO LENOVO\Desktop\10° semestre\Programacion multiparadigma\examen_unidad2\flask\.venv\lib\site-packages\sqlalchemy\orm\session.py", line 2229, in execute
+    return self._execute_internal(
+  File "C:\Users\USUARIO LENOVO\Desktop\10° semestre\Programacion multiparadigma\examen_unidad2\flask\.venv\lib\site-packages\sqlalchemy\orm\session.py", line 2124, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+  File "C:\Users\USUARIO LENOVO\Desktop\10° semestre\Programacion multiparadigma\examen_unidad2\flask\.venv\lib\site-packages\sqlalchemy\orm\context.py", line 253, in orm_execute_statement
+    result = conn.execute(
+  File "C:\Users\USUARIO LENOVO\Desktop\10° semestre\Programacion multiparadigma\examen_unidad2\flask\.venv\lib\site-packages\sqlalchemy\engine\base.py", line 1414, in execute
+    return meth(
+  File "C:\Users\USUARIO LENOVO\Desktop\10° semestre\Programacion multiparadigma\examen_unidad2\flask\.venv\lib\site-packages\sqlalchemy\sql\elements.py", line 486, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "C:\Users\USUARIO LENOVO\Desktop\10° semestre\Programacion multiparadigma\examen_unidad2\flask\.venv\lib\site-packages\sqlalchemy\engine\base.py", line 1638, in _execute_clauseelement
+    ret = self._execute_context(
+  File "C:\Users\USUARIO LENOVO\Desktop\10° semestre\Programacion multiparadigma\examen_unidad2\flask\.venv\lib\site-packages\sqlalchemy\engine\base.py", line 1842, in _execute_context
+    return self._exec_single_context(
+  File "C:\Users\USUARIO LENOVO\Desktop\10° semestre\Programacion multiparadigma\examen_unidad2\flask\.venv\lib\site-packages\sqlalchemy\engine\base.py", line 1983, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\USUARIO LENOVO\Desktop\10° semestre\Programacion multiparadigma\examen_unidad2\flask\.venv\lib\site-packages\sqlalchemy\engine\base.py", line 2326, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\USUARIO LENOVO\Desktop\10° semestre\Programacion multiparadigma\examen_unidad2\flask\.venv\lib\site-packages\sqlalchemy\engine\base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\USUARIO LENOVO\Desktop\10° semestre\Programacion multiparadigma\examen_unidad2\flask\.venv\lib\site-packages\sqlalchemy\engine\default.py", line 748, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedTable) no existe la relación «personaje»
+LINE 2: FROM personaje
+             ^
+
+[SQL: SELECT personaje.id AS personaje_id, personaje.nombre_personaje AS personaje_nombre_personaje 
+FROM personaje]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+INFO:werkzeug:127.0.0.1 - - [21/Apr/2023 07:33:34] "[35m[1mGET / HTTP/1.1[0m" 500 -
+ERROR:app:Exception on /agregar [GET]
+Traceback (most recent call last):
+  File "C:\Users\USUARIO LENOVO\Desktop\10° semestre\Programacion multiparadigma\examen_unidad2\flask\.venv\lib\site-packages\flask\app.py", line 2528, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\USUARIO LENOVO\Desktop\10° semestre\Programacion multiparadigma\examen_unidad2\flask\.venv\lib\site-packages\flask\app.py", line 1825, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\USUARIO LENOVO\Desktop\10° semestre\Programacion multiparadigma\examen_unidad2\flask\.venv\lib\site-packages\flask\app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\USUARIO LENOVO\Desktop\10° semestre\Programacion multiparadigma\examen_unidad2\flask\.venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\USUARIO LENOVO\Desktop\10° semestre\Programacion multiparadigma\examen_unidad2\flask\routes\Personaje\personaje.py", line 27, in agregar
+    return render_template('agregar.html', forma = personajeForm)
+  File "C:\Users\USUARIO LENOVO\Desktop\10° semestre\Programacion multiparadigma\examen_unidad2\flask\.venv\lib\site-packages\flask\templating.py", line 147, in render_template
+    return _render(app, template, context)
+  File "C:\Users\USUARIO LENOVO\Desktop\10° semestre\Programacion multiparadigma\examen_unidad2\flask\.venv\lib\site-packages\flask\templating.py", line 130, in _render
+    rv = template.render(context)
+  File "C:\Users\USUARIO LENOVO\Desktop\10° semestre\Programacion multiparadigma\examen_unidad2\flask\.venv\lib\site-packages\jinja2\environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "C:\Users\USUARIO LENOVO\Desktop\10° semestre\Programacion multiparadigma\examen_unidad2\flask\.venv\lib\site-packages\jinja2\environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\USUARIO LENOVO\Desktop\10° semestre\Programacion multiparadigma\examen_unidad2\flask\routes\Personaje\templates\agregar.html", line 15, in top-level template code
+    {{forma.nombre_empleado.label}}<br/>
+  File "C:\Users\USUARIO LENOVO\Desktop\10° semestre\Programacion multiparadigma\examen_unidad2\flask\.venv\lib\site-packages\jinja2\environment.py", line 485, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'forms.PersonajeForm object' has no attribute 'nombre_empleado'
+INFO:werkzeug:127.0.0.1 - - [21/Apr/2023 07:33:39] "[35m[1mGET /agregar HTTP/1.1[0m" 500 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [21/Apr/2023 07:35:31] "GET /agregar HTTP/1.1" 200 -
+ERROR:app:Exception on / [GET]
+Traceback (most recent call last):
+  File "C:\Users\USUARIO LENOVO\Desktop\10° semestre\Programacion multiparadigma\examen_unidad2\flask\.venv\lib\site-packages\sqlalchemy\engine\base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\USUARIO LENOVO\Desktop\10° semestre\Programacion multiparadigma\examen_unidad2\flask\.venv\lib\site-packages\sqlalchemy\engine\default.py", line 748, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.UndefinedTable: no existe la relación «personaje»
+LINE 2: FROM personaje
+             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\USUARIO LENOVO\Desktop\10° semestre\Programacion multiparadigma\examen_unidad2\flask\.venv\lib\site-packages\flask\app.py", line 2528, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\USUARIO LENOVO\Desktop\10° semestre\Programacion multiparadigma\examen_unidad2\flask\.venv\lib\site-packages\flask\app.py", line 1825, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\USUARIO LENOVO\Desktop\10° semestre\Programacion multiparadigma\examen_unidad2\flask\.venv\lib\site-packages\flask\app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\USUARIO LENOVO\Desktop\10° semestre\Programacion multiparadigma\examen_unidad2\flask\.venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\USUARIO LENOVO\Desktop\10° semestre\Programacion multiparadigma\examen_unidad2\flask\routes\Personaje\personaje.py", line 12, in inicio
+    personajes = Personaje.query.all()
+  File "C:\Users\USUARIO LENOVO\Desktop\10° semestre\Programacion multiparadigma\examen_unidad2\flask\.venv\lib\site-packages\sqlalchemy\orm\query.py", line 2697, in all
+    return self._iter().all()  # type: ignore
+  File "C:\Users\USUARIO LENOVO\Desktop\10° semestre\Programacion multiparadigma\examen_unidad2\flask\.venv\lib\site-packages\sqlalchemy\orm\query.py", line 2855, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+  File "C:\Users\USUARIO LENOVO\Desktop\10° semestre\Programacion multiparadigma\examen_unidad2\flask\.venv\lib\site-packages\sqlalchemy\orm\session.py", line 2229, in execute
+    return self._execute_internal(
+  File "C:\Users\USUARIO LENOVO\Desktop\10° semestre\Programacion multiparadigma\examen_unidad2\flask\.venv\lib\site-packages\sqlalchemy\orm\session.py", line 2124, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+  File "C:\Users\USUARIO LENOVO\Desktop\10° semestre\Programacion multiparadigma\examen_unidad2\flask\.venv\lib\site-packages\sqlalchemy\orm\context.py", line 253, in orm_execute_statement
+    result = conn.execute(
+  File "C:\Users\USUARIO LENOVO\Desktop\10° semestre\Programacion multiparadigma\examen_unidad2\flask\.venv\lib\site-packages\sqlalchemy\engine\base.py", line 1414, in execute
+    return meth(
+  File "C:\Users\USUARIO LENOVO\Desktop\10° semestre\Programacion multiparadigma\examen_unidad2\flask\.venv\lib\site-packages\sqlalchemy\sql\elements.py", line 486, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "C:\Users\USUARIO LENOVO\Desktop\10° semestre\Programacion multiparadigma\examen_unidad2\flask\.venv\lib\site-packages\sqlalchemy\engine\base.py", line 1638, in _execute_clauseelement
+    ret = self._execute_context(
+  File "C:\Users\USUARIO LENOVO\Desktop\10° semestre\Programacion multiparadigma\examen_unidad2\flask\.venv\lib\site-packages\sqlalchemy\engine\base.py", line 1842, in _execute_context
+    return self._exec_single_context(
+  File "C:\Users\USUARIO LENOVO\Desktop\10° semestre\Programacion multiparadigma\examen_unidad2\flask\.venv\lib\site-packages\sqlalchemy\engine\base.py", line 1983, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\USUARIO LENOVO\Desktop\10° semestre\Programacion multiparadigma\examen_unidad2\flask\.venv\lib\site-packages\sqlalchemy\engine\base.py", line 2326, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\USUARIO LENOVO\Desktop\10° semestre\Programacion multiparadigma\examen_unidad2\flask\.venv\lib\site-packages\sqlalchemy\engine\base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\USUARIO LENOVO\Desktop\10° semestre\Programacion multiparadigma\examen_unidad2\flask\.venv\lib\site-packages\sqlalchemy\engine\default.py", line 748, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedTable) no existe la relación «personaje»
+LINE 2: FROM personaje
+             ^
+
+[SQL: SELECT personaje.id AS personaje_id, personaje.nombre_personaje AS personaje_nombre_personaje 
+FROM personaje]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+INFO:werkzeug:127.0.0.1 - - [21/Apr/2023 07:35:34] "[35m[1mGET / HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [21/Apr/2023 07:36:19] "[33mGET /editar HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [21/Apr/2023 07:36:25] "GET /agregar HTTP/1.1" 200 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [21/Apr/2023 07:39:54] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Apr/2023 07:40:00] "GET /agregar HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Apr/2023 07:40:04] "[32mPOST /agregar HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [21/Apr/2023 07:40:04] "GET /personaje HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Apr/2023 07:40:06] "GET /editar/1 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Apr/2023 07:40:09] "[32mPOST /editar/1 HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [21/Apr/2023 07:40:09] "GET /personaje HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Apr/2023 07:40:10] "[32mGET /eliminar/1 HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [21/Apr/2023 07:40:10] "GET /personaje HTTP/1.1" 200 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [21/Apr/2023 07:45:04] "GET /personaje HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Apr/2023 07:45:09] "[33mGET /personaje/salir HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [21/Apr/2023 07:45:09] "[33mGET /static/404.css HTTP/1.1[0m" 404 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [21/Apr/2023 07:50:20] "[33mGET /personaje/salir HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [21/Apr/2023 07:50:22] "[33mGET /personaje/ HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [21/Apr/2023 07:50:28] "[33mGET /personaje/ HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [21/Apr/2023 07:50:31] "GET /personaje HTTP/1.1" 200 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [21/Apr/2023 07:50:45] "GET /personaje HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Apr/2023 07:50:47] "[33mGET /salir HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [21/Apr/2023 07:50:47] "[33mGET /static/404.css HTTP/1.1[0m" 404 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [21/Apr/2023 07:52:47] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Apr/2023 07:52:52] "GET /agregar HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Apr/2023 07:52:54] "[32mPOST /agregar HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [21/Apr/2023 07:52:54] "GET /personaje HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Apr/2023 07:53:03] "GET /editar/2 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Apr/2023 07:53:05] "[33mGET /salir HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [21/Apr/2023 07:53:05] "[33mGET /static/404.css HTTP/1.1[0m" 404 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [21/Apr/2023 07:54:32] "[33mGET /salir HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [21/Apr/2023 07:54:32] "[33mGET /static/404.css HTTP/1.1[0m" 404 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [21/Apr/2023 07:56:19] "[33mGET /salir HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [21/Apr/2023 07:56:19] "[33mGET /static/404.css HTTP/1.1[0m" 404 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [21/Apr/2023 07:56:44] "[33mGET /salir HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [21/Apr/2023 07:56:44] "[33mGET /static/404.css HTTP/1.1[0m" 404 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [21/Apr/2023 07:57:54] "[33mGET /salir HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [21/Apr/2023 07:57:54] "[33mGET /static/404.css HTTP/1.1[0m" 404 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [21/Apr/2023 07:59:33] "[33mGET /salir HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [21/Apr/2023 07:59:33] "[33mGET /static/404.css HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [21/Apr/2023 07:59:39] "GET / HTTP/1.1" 200 -
