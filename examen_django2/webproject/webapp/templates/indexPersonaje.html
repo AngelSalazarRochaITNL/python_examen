@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personajes</title>
+</head>
+<body>
+    <h3>Personajes</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>PE</th>
+                <th>Ataque</th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for personaje in formaPersonaje %}
+            <tr>
+                <td>{{personaje.nombre}}</td>
+                <td>{{personaje.pe}}</td>
+                <td>{{personaje.ataque}}</td>
+                <td><a href="{% url 'editarPersonaje/'personaje.id %}">Editar</a></td>
+                <td><a href="{% url 'eliminarPersonaje'personaje.id %}">Eliminar</a></td>
+                <td><a href="{% url 'detallePersonaje'personaje.id %}">Detalle</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
